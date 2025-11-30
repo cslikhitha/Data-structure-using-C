@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+char STR[100],PAT[100],REP[100],ANS[100];
+int i,j,k,m,c,flag=0;
+void read()
+    {
+        printf("Enter the main string");
+        scanf("%s",STR);
+        printf("Enter the pattern string ");
+        scanf("%s",PAT);
+        printf("Enter the Replacing string");
+        scanf("%s",REP);
+    }
+void replace()
+    {
+        i=j=k=m=c=0;
+        while(STR[c]!='\0')
+        {
+            if(STR[m]==PAT[i])
+            {
+                i++;
+                m++;       
+            if(PAT[i]=='\0')
+            {
+                for(k=0;REP[k]!='\0';k++,j++)
+                ANS[j]=REP[k];
+                i=0;
+                c=m;
+                flag=1;
+            }  
+        }
+         else
+         {
+            ANS[j]=STR[c];
+            j++;
+            c++;
+            m=c;
+            i=0;
+         }
+    }
+    if(flag==0)
+    {
+        
+        printf("the Resulatant string does not exists\n");
+    }
+    else
+    {
+        ANS[j]='\0';
+        printf("The resultant string is :%s\n",ANS);
+    }
+}
+void main()
+    {
+        read();
+        replace();
+    }
