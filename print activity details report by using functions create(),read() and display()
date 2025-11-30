@@ -1,0 +1,42 @@
+#include<stdio.h>
+
+typedef struct{
+    char day[20];
+    char activity[30];
+}Activity;
+void createCalendar(Activity calendar[7])
+{
+    printf("Enter the Activities details for each day\n ");
+    for(int i=0;i<7;i++)
+    {
+        printf("Day:%d\n",i+1);
+        scanf("%s",calendar[i].day);
+        printf("activity:");
+        scanf("%s",calendar[i].activity);
+    }
+}
+void readData(Activity calendar[7])
+        {
+            createCalendar(calendar);
+        }   
+        
+ void displayReport(Activity calendar[7])
+ {
+    printf("\nWeekly activity details report\n");
+    for(int i=0;i<7;i++)
+    {
+        printf("%s:%s\n",calendar[i].day,calendar[i].activity);
+    }
+ }
+int main()
+{
+    Activity calendar[7];
+    readData(calendar);
+    displayReport(calendar);
+}
+
+
+
+
+
+
