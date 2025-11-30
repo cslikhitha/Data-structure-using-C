@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<string.h>
+struct day{
+    char name[20];int date;
+    char activity[100];
+};
+int main()
+{
+    struct day calender[7];
+    strcpy(calender[0].name,"MONDAY");
+    calender[0].date=1;
+    strcpy(calender[0].activity," WORK FROM 9AM to 9PM");
+    strcpy(calender[1].name,"TUESDAY");
+    calender[1].date=2;
+    strcpy(calender[1].activity,"MEETING AT 9 AM TO 5PM");
+    strcpy(calender[2].name,"WEDNESDAY");
+    calender[2].date=3;
+    strcpy(calender[2].activity," GYM AT 6PM");
+    strcpy(calender[3].name,"THRUSDAY");
+    calender[3].date=4;
+    strcpy(calender[3].activity,"DINNER WITH FRIENDS AT 7PM");
+    strcpy(calender[4].name,"FRIDAY");
+    calender[4].date=5;
+    strcpy(calender[4].activity," MOVIE NIGHT AT 8PM");
+    strcpy(calender[5].name,"SATURDAY");
+    calender[5].date=6;
+    strcpy(calender[5].activity,"WEEKEND GATAWAY");
+    strcpy(calender[6].name,"SUNDAY");
+    calender[6].date=7;
+    strcpy(calender[6].activity,"RELAX AND RECHARGE");
+    printf("Calender of the week:\n");
+    for(int i=0;i<7;i++)
+    {
+        printf("%s(Date:%d):%s\n",calender[i].name,calender[i].date,calender[i].activity);
+    }
+    return 0;
+}
